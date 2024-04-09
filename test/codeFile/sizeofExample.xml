@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:cpp="http://www.srcML.org/srcML/cpp" revision="1.0.0" language="C++" filename="sizeofExample.cpp"><cpp:include>#<cpp:directive>include</cpp:directive> <cpp:file>&lt;iostream&gt;</cpp:file></cpp:include>
+
+<function><type><name>int</name></type> <name>main</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>int</name></type> <name>size_int</name> <init>= <expr><sizeof>sizeof<argument_list>(<argument><expr><name>int</name></expr></argument>)</argument_list></sizeof></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>int</name></type> <name>size_float</name> <init>= <expr><sizeof>sizeof<argument_list>(<argument><expr><name>float</name></expr></argument>)</argument_list></sizeof></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>int</name></type> <name>size_double</name> <init>= <expr><sizeof>sizeof<argument_list>(<argument><expr><name>double</name></expr></argument>)</argument_list></sizeof></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>int</name></type> <name>size_char</name> <init>= <expr><sizeof>sizeof<argument_list>(<argument><expr><name>char</name></expr></argument>)</argument_list></sizeof></expr></init></decl>;</decl_stmt>
+
+    <expr_stmt><expr><name><name>std</name><operator>::</operator><name>cout</name></name> <operator>&lt;&lt;</operator> <literal type="string">"Size of int: "</literal> <operator>&lt;&lt;</operator> <name>size_int</name> <operator>&lt;&lt;</operator> <name><name>std</name><operator>::</operator><name>endl</name></name></expr>;</expr_stmt>
+    <expr_stmt><expr><name><name>std</name><operator>::</operator><name>cout</name></name> <operator>&lt;&lt;</operator> <literal type="string">"Size of float: "</literal> <operator>&lt;&lt;</operator> <name>size_float</name> <operator>&lt;&lt;</operator> <name><name>std</name><operator>::</operator><name>endl</name></name></expr>;</expr_stmt>
+    <expr_stmt><expr><name><name>std</name><operator>::</operator><name>cout</name></name> <operator>&lt;&lt;</operator> <literal type="string">"Size of double: "</literal> <operator>&lt;&lt;</operator> <name>size_double</name> <operator>&lt;&lt;</operator> <name><name>std</name><operator>::</operator><name>endl</name></name></expr>;</expr_stmt>
+    <expr_stmt><expr><name><name>std</name><operator>::</operator><name>cout</name></name> <operator>&lt;&lt;</operator> <literal type="string">"Size of char: "</literal> <operator>&lt;&lt;</operator> <name>size_char</name> <operator>&lt;&lt;</operator> <name><name>std</name><operator>::</operator><name>endl</name></name></expr>;</expr_stmt>
+
+    <return>return <expr><literal type="number">0</literal></expr>;</return>
+</block_content>}</block></function>
+</unit>

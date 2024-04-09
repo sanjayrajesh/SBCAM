@@ -1,0 +1,60 @@
+srcml foo.cpp -o foo.xml
+
+Generate the srcML for the given source code file using the --position option. Then run nameCollector.
+srcml foo.cpp --position -o foo.cpp.xml
+./nameCollector foo.cpp.xml -f csv -o results.csv
+./nameCollector --help
+
+***CPP***
+#Get the name of the Functions.
+srcml --xpath="//src:function/src:name" test.cpp
+
+#Get the number of Functions.
+srcml --xpath="count(//src:function/src:name)" test.cpp
+
+#Get the name of the packages used.
+srcml --xpath="//cpp:include/cpp:file" test.cpp
+
+------------
+
+wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
+sudo dpkg -i libssl1.1_1.1.0g-2ubuntu4_amd64.deb
+
+sudo apt-get install -y libarchive13
+
+sudo dpkg -i srcml_1.0.0-1_ubuntu20.04.deb
+
+sudo dpkg -i srcml-dev_1.0.0-1_ubuntu20.04.deb
+
+sudo apt install libarchive-dev
+
+sudo apt install libcurl4-openssl-dev
+
+sudo apt install libboost-all-dev
+
+sudo apt-get install libxml2
+
+sudo apt-get install libxml2-dev
+
+sudo apt install libxslt-dev
+
+sudo apt install antlr4
+
+sudo apt-get install libantlr-dev
+
+sudo apt-get install libssl-dev
+
+sudo apt-get install ninja-build
+
+
+export ANTLR_LIBRARY=/home/pambalil/opt/lib/antlr-4.13.1-complete.jar
+
+export CMAKE_PREFIX_PATH=/usr/bin/srcml
+
+export srcml_DIR=/usr/bin/srcml
+
+cmake CMakeLists.txt -B build
+
+ I would recommend switching to the develop branch of srcML, and using the cmake <path_to_srcml> and sudo cmake --build <build_folder_path> --target install commands to build and install srcML.
+
+I forgot a part of the commands - since you are on WSL, you'll need to add --preset ubuntu-release to the first command, so you'll run cmake <path_to_srcml> --preset ubuntu-release and then sudo cmake --build <build_folder_path> --target install

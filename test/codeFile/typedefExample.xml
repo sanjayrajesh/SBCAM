@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:cpp="http://www.srcML.org/srcML/cpp" revision="1.0.0" language="C++" filename="typedefExample.cpp"><cpp:include>#<cpp:directive>include</cpp:directive> <cpp:file>&lt;iostream&gt;</cpp:file></cpp:include>
+
+<comment type="line">// Define a struct named 'Person'</comment>
+<typedef>typedef <type><struct>struct <block>{<public type="default">
+    <decl_stmt><decl><type><name><name>std</name><operator>::</operator><name>string</name></name></type> <name>name</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>int</name></type> <name>age</name></decl>;</decl_stmt>
+</public>}</block></struct></type> <name>Person</name>;</typedef>
+
+<comment type="line">// Define another struct named 'Point'</comment>
+<typedef>typedef <type><struct>struct <block>{<public type="default">
+    <decl_stmt><decl><type><name>int</name></type> <name>x</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>int</name></type> <name>y</name></decl>;</decl_stmt>
+</public>}</block></struct></type> <name>Point</name>;</typedef>
+
+<function><type><name>int</name></type> <name>main</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <comment type="line">// Define variables of the struct types</comment>
+    <decl_stmt><decl><type><name>Person</name></type> <name>person1</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>Point</name></type> <name>point1</name></decl>;</decl_stmt>
+
+    <comment type="line">// Assign values to the struct variables</comment>
+    <expr_stmt><expr><name><name>person1</name><operator>.</operator><name>name</name></name> <operator>=</operator> <literal type="string">"John"</literal></expr>;</expr_stmt>
+    <expr_stmt><expr><name><name>person1</name><operator>.</operator><name>age</name></name> <operator>=</operator> <literal type="number">30</literal></expr>;</expr_stmt>
+
+    <expr_stmt><expr><name><name>point1</name><operator>.</operator><name>x</name></name> <operator>=</operator> <literal type="number">10</literal></expr>;</expr_stmt>
+    <expr_stmt><expr><name><name>point1</name><operator>.</operator><name>y</name></name> <operator>=</operator> <literal type="number">20</literal></expr>;</expr_stmt>
+
+    <comment type="line">// Print struct variable values</comment>
+    <expr_stmt><expr><name><name>std</name><operator>::</operator><name>cout</name></name> <operator>&lt;&lt;</operator> <literal type="string">"Person: "</literal> <operator>&lt;&lt;</operator> <name><name>person1</name><operator>.</operator><name>name</name></name> <operator>&lt;&lt;</operator> <literal type="string">", Age: "</literal> <operator>&lt;&lt;</operator> <name><name>person1</name><operator>.</operator><name>age</name></name> <operator>&lt;&lt;</operator> <name><name>std</name><operator>::</operator><name>endl</name></name></expr>;</expr_stmt>
+    <expr_stmt><expr><name><name>std</name><operator>::</operator><name>cout</name></name> <operator>&lt;&lt;</operator> <literal type="string">"Point: ("</literal> <operator>&lt;&lt;</operator> <name><name>point1</name><operator>.</operator><name>x</name></name> <operator>&lt;&lt;</operator> <literal type="string">", "</literal> <operator>&lt;&lt;</operator> <name><name>point1</name><operator>.</operator><name>y</name></name> <operator>&lt;&lt;</operator> <literal type="string">")"</literal> <operator>&lt;&lt;</operator> <name><name>std</name><operator>::</operator><name>endl</name></name></expr>;</expr_stmt>
+
+    <return>return <expr><literal type="number">0</literal></expr>;</return>
+</block_content>}</block></function>
+</unit>

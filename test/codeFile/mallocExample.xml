@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:cpp="http://www.srcML.org/srcML/cpp" revision="1.0.0" language="C++" filename="mallocExample.cpp"><cpp:include>#<cpp:directive>include</cpp:directive> <cpp:file>&lt;iostream&gt;</cpp:file></cpp:include>
+<cpp:include>#<cpp:directive>include</cpp:directive> <cpp:file>&lt;cstdlib&gt;</cpp:file></cpp:include>
+
+<function><type><name>int</name></type> <name>main</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <comment type="line">// Allocate memory using malloc</comment>
+    <decl_stmt><decl><type><name>int</name> <modifier>*</modifier></type><name>ptr1</name> <init>= <expr><operator>(</operator><name>int</name><operator>*</operator><operator>)</operator><call><name>malloc</name><argument_list>(<argument><expr><sizeof>sizeof<argument_list>(<argument><expr><name>int</name></expr></argument>)</argument_list></sizeof></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>int</name> <modifier>*</modifier></type><name>ptr2</name> <init>= <expr><operator>(</operator><name>int</name><operator>*</operator><operator>)</operator><call><name>malloc</name><argument_list>(<argument><expr><sizeof>sizeof<argument_list>(<argument><expr><name>int</name></expr></argument>)</argument_list></sizeof></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>char</name> <modifier>*</modifier></type><name>ptr3</name> <init>= <expr><operator>(</operator><name>char</name><operator>*</operator><operator>)</operator><call><name>malloc</name><argument_list>(<argument><expr><sizeof>sizeof<argument_list>(<argument><expr><name>char</name></expr></argument>)</argument_list></sizeof> <operator>*</operator> <literal type="number">10</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+    <comment type="line">// Check if memory allocation was successful</comment>
+    <if_stmt><if>if <condition>(<expr><name>ptr1</name> <operator>==</operator> <literal type="null">nullptr</literal> <operator>||</operator> <name>ptr2</name> <operator>==</operator> <literal type="null">nullptr</literal> <operator>||</operator> <name>ptr3</name> <operator>==</operator> <literal type="null">nullptr</literal></expr>)</condition> <block>{<block_content>
+        <expr_stmt><expr><name><name>std</name><operator>::</operator><name>cout</name></name> <operator>&lt;&lt;</operator> <literal type="string">"Memory allocation failed."</literal> <operator>&lt;&lt;</operator> <name><name>std</name><operator>::</operator><name>endl</name></name></expr>;</expr_stmt>
+        <return>return <expr><literal type="number">1</literal></expr>;</return>
+    </block_content>}</block></if></if_stmt>
+
+    <comment type="line">// Deallocate memory</comment>
+    <expr_stmt><expr><call><name>free</name><argument_list>(<argument><expr><name>ptr1</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name>free</name><argument_list>(<argument><expr><name>ptr2</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name>free</name><argument_list>(<argument><expr><name>ptr3</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><name><name>std</name><operator>::</operator><name>cout</name></name> <operator>&lt;&lt;</operator> <literal type="string">"Exiting"</literal></expr>;</expr_stmt>
+    <return>return <expr><literal type="number">0</literal></expr>;</return>
+</block_content>}</block></function>
+</unit>

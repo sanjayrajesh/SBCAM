@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:cpp="http://www.srcML.org/srcML/cpp" revision="1.0.0" language="C++" filename="arrPointer.cpp"><cpp:include>#<cpp:directive>include</cpp:directive> <cpp:file>&lt;iostream&gt;</cpp:file></cpp:include>
+
+<comment type="line">// Function that takes an array pointer as a parameter</comment>
+<function><type><name>void</name></type> <name>printArray</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name><name>arr</name><index>[]</index></name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>size</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name>size</name></expr>;</condition> <incr><expr><operator>++</operator><name>i</name></expr></incr>)</control> <block>{<block_content>
+        <expr_stmt><expr><name><name>std</name><operator>::</operator><name>cout</name></name> <operator>&lt;&lt;</operator> <name><name>arr</name><index>[<expr><name>i</name></expr>]</index></name> <operator>&lt;&lt;</operator> <literal type="string">" "</literal></expr>;</expr_stmt>
+    </block_content>}</block></for>
+    <expr_stmt><expr><name><name>std</name><operator>::</operator><name>cout</name></name> <operator>&lt;&lt;</operator> <name><name>std</name><operator>::</operator><name>endl</name></name></expr>;</expr_stmt>
+</block_content>}</block></function>
+
+<comment type="line">// Function that takes two array pointers as parameters</comment>
+<function><type><name>void</name></type> <name>printArrays</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name><name>arr1</name><index>[]</index></name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>size1</name></decl></parameter>, <parameter><decl><type><name>char</name></type> <name><name>arr2</name><index>[]</index></name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>size2</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <expr_stmt><expr><name><name>std</name><operator>::</operator><name>cout</name></name> <operator>&lt;&lt;</operator> <literal type="string">"Array 1: "</literal></expr>;</expr_stmt>
+    <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name>size1</name></expr>;</condition> <incr><expr><operator>++</operator><name>i</name></expr></incr>)</control> <block>{<block_content>
+        <expr_stmt><expr><name><name>std</name><operator>::</operator><name>cout</name></name> <operator>&lt;&lt;</operator> <name><name>arr1</name><index>[<expr><name>i</name></expr>]</index></name> <operator>&lt;&lt;</operator> <literal type="string">" "</literal></expr>;</expr_stmt>
+    </block_content>}</block></for>
+    <expr_stmt><expr><name><name>std</name><operator>::</operator><name>cout</name></name> <operator>&lt;&lt;</operator> <name><name>std</name><operator>::</operator><name>endl</name></name></expr>;</expr_stmt>
+
+    <expr_stmt><expr><name><name>std</name><operator>::</operator><name>cout</name></name> <operator>&lt;&lt;</operator> <literal type="string">"Array 2: "</literal></expr>;</expr_stmt>
+    <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name>size2</name></expr>;</condition> <incr><expr><operator>++</operator><name>i</name></expr></incr>)</control> <block>{<block_content>
+        <expr_stmt><expr><name><name>std</name><operator>::</operator><name>cout</name></name> <operator>&lt;&lt;</operator> <name><name>arr2</name><index>[<expr><name>i</name></expr>]</index></name> <operator>&lt;&lt;</operator> <literal type="string">" "</literal></expr>;</expr_stmt>
+    </block_content>}</block></for>
+    <expr_stmt><expr><name><name>std</name><operator>::</operator><name>cout</name></name> <operator>&lt;&lt;</operator> <name><name>std</name><operator>::</operator><name>endl</name></name></expr>;</expr_stmt>
+</block_content>}</block></function>
+
+<function><type><name>int</name></type> <name>main</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>int</name></type> <name><name>array</name><index>[<expr><literal type="number">5</literal></expr>]</index></name> <init>= <expr><block>{<expr><literal type="number">1</literal></expr>, <expr><literal type="number">2</literal></expr>, <expr><literal type="number">3</literal></expr>, <expr><literal type="number">4</literal></expr>, <expr><literal type="number">5</literal></expr>}</block></expr></init></decl>;</decl_stmt>
+    <expr_stmt><expr><call><name>printArray</name><argument_list>(<argument><expr><name>array</name></expr></argument>, <argument><expr><literal type="number">5</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+     <decl_stmt><decl><type><name>int</name></type> <name><name>array1</name><index>[<expr><literal type="number">5</literal></expr>]</index></name> <init>= <expr><block>{<expr><literal type="number">1</literal></expr>, <expr><literal type="number">2</literal></expr>, <expr><literal type="number">3</literal></expr>, <expr><literal type="number">4</literal></expr>, <expr><literal type="number">5</literal></expr>}</block></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>char</name></type> <name><name>array2</name><index>[<expr><literal type="number">3</literal></expr>]</index></name> <init>= <expr><block>{<expr><literal type="char">'a'</literal></expr>, <expr><literal type="char">'b'</literal></expr>, <expr><literal type="char">'c'</literal></expr>}</block></expr></init></decl>;</decl_stmt>
+
+    <expr_stmt><expr><call><name>printArrays</name><argument_list>(<argument><expr><name>array1</name></expr></argument>, <argument><expr><literal type="number">5</literal></expr></argument>, <argument><expr><name>array2</name></expr></argument>, <argument><expr><literal type="number">3</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <return>return <expr><literal type="number">0</literal></expr>;</return>
+</block_content>}</block></function>
+</unit>
