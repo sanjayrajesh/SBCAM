@@ -1,2 +1,13 @@
 # Added by Sanjay
 desktop.ini
+.vscode/
+.ipynb_checkpoints/
+*.exe
+
+src/.vscode/
+src/.ipynb_checkpoints/
+src/*.exe
+
+test/.vscode/
+test/.ipynb_checkpoints/
+test/*.exe
