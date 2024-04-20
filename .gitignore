@@ -5,10 +5,10 @@ desktop.ini
 __pycache__/
 *.exe
 
-src/.vscode/
-src/.ipynb_checkpoints/
-src/__pycache__/
-src/*.exe
+scripts/.vscode/
+scripts/.ipynb_checkpoints/
+scripts/__pycache__/
+scripts/*.exe
 
 test/.vscode/
 test/.ipynb_checkpoints/
