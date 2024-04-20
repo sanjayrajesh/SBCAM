@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:cpp="http://www.srcML.org/srcML/cpp" revision="1.0.0" language="C++" filename="../assignments/assignment_1/teachers_solution/test.cpp"><cpp:include>#<cpp:directive>include</cpp:directive> <cpp:file>&lt;iostream&gt;</cpp:file></cpp:include>
+<cpp:include>#<cpp:directive>include</cpp:directive> <cpp:file>&lt;cmath&gt;</cpp:file></cpp:include>
+
+<using>using <namespace>namespace <name>std</name>;</namespace></using>
+
+<comment type="line">// Function to check if a number is prime</comment>
+<function><type><name>bool</name></type> <name>isPrime</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>num</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <if_stmt><if>if <condition>(<expr><name>num</name> <operator>&lt;=</operator> <literal type="number">1</literal></expr>)</condition><block type="pseudo"><block_content>
+        <return>return <expr><literal type="boolean">false</literal></expr>;</return></block_content></block></if></if_stmt>
+    <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">2</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;=</operator> <call><name>sqrt</name><argument_list>(<argument><expr><name>num</name></expr></argument>)</argument_list></call></expr>;</condition> <incr><expr><operator>++</operator><name>i</name></expr></incr>)</control> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>num</name> <operator>%</operator> <name>i</name> <operator>==</operator> <literal type="number">0</literal></expr>)</condition><block type="pseudo"><block_content>
+            <return>return <expr><literal type="boolean">false</literal></expr>;</return></block_content></block></if></if_stmt>
+    </block_content>}</block></for>
+    <return>return <expr><literal type="boolean">true</literal></expr>;</return>
+</block_content>}</block></function>
+
+<comment type="line">// Function to calculate factorial</comment>
+<function><type><name>int</name></type> <name>factorial</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>n</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <if_stmt><if>if <condition>(<expr><name>n</name> <operator>==</operator> <literal type="number">0</literal></expr>)</condition><block type="pseudo"><block_content>
+        <return>return <expr><literal type="number">1</literal></expr>;</return></block_content></block></if>
+    <else>else<block type="pseudo"><block_content>
+        <return>return <expr><name>n</name> <operator>*</operator> <call><name>factorial</name><argument_list>(<argument><expr><name>n</name> <operator>-</operator> <literal type="number">1</literal></expr></argument>)</argument_list></call></expr>;</return></block_content></block></else></if_stmt>
+</block_content>}</block></function>
+
+<comment type="line">// Function to calculate Fibonacci series</comment>
+<function><type><name>void</name></type> <name>fibonacci</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>n</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>int</name></type> <name>a</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>, <decl><type ref="prev"/><name>b</name> <init>= <expr><literal type="number">1</literal></expr></init></decl>, <decl><type ref="prev"/><name>c</name></decl>;</decl_stmt>
+    <expr_stmt><expr><name>cout</name> <operator>&lt;&lt;</operator> <literal type="string">"Fibonacci Series up to "</literal> <operator>&lt;&lt;</operator> <name>n</name> <operator>&lt;&lt;</operator> <literal type="string">" terms: "</literal></expr>;</expr_stmt>
+    <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">1</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;=</operator> <name>n</name></expr>;</condition> <incr><expr><operator>++</operator><name>i</name></expr></incr>)</control> <block>{<block_content>
+        <expr_stmt><expr><name>cout</name> <operator>&lt;&lt;</operator> <name>a</name> <operator>&lt;&lt;</operator> <literal type="string">" "</literal></expr>;</expr_stmt>
+        <expr_stmt><expr><name>c</name> <operator>=</operator> <name>a</name> <operator>+</operator> <name>b</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name>a</name> <operator>=</operator> <name>b</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name>b</name> <operator>=</operator> <name>c</name></expr>;</expr_stmt>
+    </block_content>}</block></for>
+    <expr_stmt><expr><name>cout</name> <operator>&lt;&lt;</operator> <name>endl</name></expr>;</expr_stmt>
+</block_content>}</block></function>
+
+<function><type><name>int</name></type> <name>main</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>int</name></type> <name>choice</name></decl>;</decl_stmt>
+    <expr_stmt><expr><name>cout</name> <operator>&lt;&lt;</operator> <literal type="string">"Select an option:\n"</literal></expr>;</expr_stmt>
+    <expr_stmt><expr><name>cout</name> <operator>&lt;&lt;</operator> <literal type="string">"1. Check prime number\n"</literal></expr>;</expr_stmt>
+    <expr_stmt><expr><name>cout</name> <operator>&lt;&lt;</operator> <literal type="string">"2. Calculate factorial\n"</literal></expr>;</expr_stmt>
+    <expr_stmt><expr><name>cout</name> <operator>&lt;&lt;</operator> <literal type="string">"3. Generate Fibonacci series\n"</literal></expr>;</expr_stmt>
+    <expr_stmt><expr><name>cin</name> <operator>&gt;&gt;</operator> <name>choice</name></expr>;</expr_stmt>
+
+    <switch>switch <condition>(<expr><name>choice</name></expr>)</condition> <block>{<block_content>
+        <case>case <expr><literal type="number">1</literal></expr>:</case> <block>{<block_content>
+            <decl_stmt><decl><type><name>int</name></type> <name>num</name></decl>;</decl_stmt>
+            <expr_stmt><expr><name>cout</name> <operator>&lt;&lt;</operator> <literal type="string">"Enter a number to check prime: "</literal></expr>;</expr_stmt>
+            <expr_stmt><expr><name>cin</name> <operator>&gt;&gt;</operator> <name>num</name></expr>;</expr_stmt>
+            <if_stmt><if>if <condition>(<expr><call><name>isPrime</name><argument_list>(<argument><expr><name>num</name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+                <expr_stmt><expr><name>cout</name> <operator>&lt;&lt;</operator> <name>num</name> <operator>&lt;&lt;</operator> <literal type="string">" is a prime number.\n"</literal></expr>;</expr_stmt></block_content></block></if>
+            <else>else<block type="pseudo"><block_content>
+                <expr_stmt><expr><name>cout</name> <operator>&lt;&lt;</operator> <name>num</name> <operator>&lt;&lt;</operator> <literal type="string">" is not a prime number.\n"</literal></expr>;</expr_stmt></block_content></block></else></if_stmt>
+            <break>break;</break>
+        </block_content>}</block>
+        <case>case <expr><literal type="number">2</literal></expr>:</case> <block>{<block_content>
+            <decl_stmt><decl><type><name>int</name></type> <name>num</name></decl>;</decl_stmt>
+            <expr_stmt><expr><name>cout</name> <operator>&lt;&lt;</operator> <literal type="string">"Enter a number to calculate factorial: "</literal></expr>;</expr_stmt>
+            <expr_stmt><expr><name>cin</name> <operator>&gt;&gt;</operator> <name>num</name></expr>;</expr_stmt>
+            <expr_stmt><expr><name>cout</name> <operator>&lt;&lt;</operator> <literal type="string">"Factorial of "</literal> <operator>&lt;&lt;</operator> <name>num</name> <operator>&lt;&lt;</operator> <literal type="string">" is "</literal> <operator>&lt;&lt;</operator> <call><name>factorial</name><argument_list>(<argument><expr><name>num</name></expr></argument>)</argument_list></call> <operator>&lt;&lt;</operator> <name>endl</name></expr>;</expr_stmt>
+            <break>break;</break>
+        </block_content>}</block>
+        <case>case <expr><literal type="number">3</literal></expr>:</case> <block>{<block_content>
+            <decl_stmt><decl><type><name>int</name></type> <name>terms</name></decl>;</decl_stmt>
+            <expr_stmt><expr><name>cout</name> <operator>&lt;&lt;</operator> <literal type="string">"Enter the number of terms for Fibonacci series: "</literal></expr>;</expr_stmt>
+            <expr_stmt><expr><name>cin</name> <operator>&gt;&gt;</operator> <name>terms</name></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name>fibonacci</name><argument_list>(<argument><expr><name>terms</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <break>break;</break>
+        </block_content>}</block>
+        <default>default:</default>
+            <expr_stmt><expr><name>cout</name> <operator>&lt;&lt;</operator> <literal type="string">"Invalid choice!\n"</literal></expr>;</expr_stmt>
+    </block_content>}</block></switch>
+
+    <return>return <expr><literal type="number">0</literal></expr>;</return>
+</block_content>}</block></function>
+</unit>

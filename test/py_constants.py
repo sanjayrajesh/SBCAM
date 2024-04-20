@@ -1,8 +1,23 @@
 # CONSTANTS: PATH SETTINGS
 # ------------------------------
-CODE_INPUT = "codeFile"
-XML_OUTPUT = "codeFile"
-JSON_FILE = "quality_metrics.json"
+# INSTRUCTOR
+INSTRUCTOR_BASE_PATH = "../assignments/assignment_{}/teachers_solution/"
+INSTRUCTOR_SOLUTION = INSTRUCTOR_BASE_PATH + "{}"
+INSTRUCTOR_XML_OUTPUT = INSTRUCTOR_BASE_PATH + "{}.xml"
+INSTRUCTOR_JSON_FILE = INSTRUCTOR_BASE_PATH + "quality_metrics.json"
+
+# STUDENT_SUBMISSION
+STUDENT_BASE_PATH = "../assignments/assignment_{}/student_submission/"
+STUDENT_INDIVIDUAL = STUDENT_BASE_PATH + "{}/"
+STUDENT_SUBMISSION = STUDENT_INDIVIDUAL + "{}"
+STUDENT_XML_OUTPUT = STUDENT_INDIVIDUAL + "{}.xml"
+
+#RESULTS
+RESULTS_BASE_PATH = "../results/"
+RESULTS_ASSIGNMENT = RESULTS_BASE_PATH + "Assignment_{}_Results.xlsx"
+
+PENALTY_FACTOR = 0.95
+
 
 # Define the namespace
 NAMESPACE_CPP = {'cpp': 'http://www.srcML.org/srcML/cpp'}
@@ -30,4 +45,3 @@ FUNCTION_MAP = {
     'NSizeof': 'count_sizeof',
     'NFree': 'count_free_functions'
 }
-
