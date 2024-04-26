@@ -1,1 +1,1 @@
-# SBCAM: Structure-Based Code Assessment Mode
+# SBCAM: Structure-Based Code Assessment Model
