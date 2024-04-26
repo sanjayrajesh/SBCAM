@@ -1,1 +1,1 @@
-# Source-Code-Assessment
+# SBCAM: Structure-Based Code Assessment Mode
