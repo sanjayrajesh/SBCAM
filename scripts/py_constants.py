@@ -25,8 +25,8 @@ NAMESPACE_SRC = {'src': 'http://www.srcML.org/srcML/src'}
 
 FUNCTION_MAP = {
     'NF': 'count_function_declarations_excluding_main',
-    'FLC': 'calculate_average_executable_lines',
     'NP': 'get_parameter_count_in_functions',
+    'FLC': 'calculate_average_executable_lines',
     'NC': 'count_function_calls',
     'NR': 'count_returns',
     'NPt-s': 'count_simple_pointers',
